@@ -1,0 +1,13 @@
+
+public class Exercicio01 {
+
+	public static void main(String[] args) {
+		
+		int B = 10;
+		int A = 30;
+		int soma = A + B;
+			
+		System.out.println("SOMA = " + soma);
+		
+	}
+}
