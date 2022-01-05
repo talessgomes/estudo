@@ -1,0 +1,55 @@
+Criar uma view com com as seguinte colunas 
+ 
+ PACIENTE            ---- nome do paciente  
+   NUMERO_DO_itemdoPEDIDO      ---- cd_itped_rx  
+     DATA_DA_REALIZACAO    
+    DESCRICAO_DO_EXAME           --- ds_exa_rx
+    USUARIO        ----  cd_paciente      
+   SENHA           ---    cd_exa_rx||cd_paciente   
+
+tabelas: itped_rx, ped_rx, exa_rx e outras
+
+Esta view deve ter o nome de view_ACWL_nome	
+
+OBS: 
+
+---exemplo de criação de view 
+CREATE OR REPLACE VIEW modelo_view_wl as
+
+SELECT paciente.cd_paciente
+, atendime.cd_atendimento
+, atendime.dt_atendimento 
+FROM paciente,
+atendime
+WHERE  paciente.cd_paciente = atendime.cd_paciente
+AND atendime.dt_atendimento <= (SYSDATE - 400)
+
+---exemplo de concatenação
+SELECT paciente.cd_paciente||' - '||atendime.cd_atendimento
+, atendime.dt_atendimento 
+FROM paciente,
+atendime
+WHERE  paciente.cd_paciente = atendime.cd_paciente
+AND atendime.dt_atendimento <= (SYSDATE - 400)
+				 
+--- Exemplo para poder pegar a lista
+					 
+SELECT * FROM modelo_view_wl
+ WHERE cd_atendimento < 10
+
+
+---exemplo de concatenação
+SELECT paciente.cd_paciente||' - '||atendime.cd_atendimento
+, atendime.dt_atendimento 
+FROM paciente,
+atendime
+WHERE  paciente.cd_paciente = atendime.cd_paciente
+AND atendime.dt_atendimento <= (SYSDATE - 400)
+					 
+					 
+					 
+					 
+					 
+					 
+					 
+
