@@ -1,24 +1,22 @@
-package ex01;
+package ex05;
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
-		int x;
 		
-		 x = sc.nextInt();
+		int n = sc.nextInt();
 		
-		
-		for (int i = 0; i < x; i++) {
-			if (i % 2 != 0) {
-				System.out.println(i);
-			}
+		int fat = 1;
+		for (int i=1; i<=n; i++) {
+			fat = fat * i;
 		}
 		
-		sc.close();
+		System.out.println(fat);
 
+		sc.close();
 	}
 
 }
