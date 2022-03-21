@@ -12,7 +12,7 @@ public class Main {
 		in = 0;
 		out = 0;
 
-		for (int i = 0; i < n; i++) {
+		for (int i = 1; i <= n; i++) {
 
 			int x = sc.nextInt();
 
